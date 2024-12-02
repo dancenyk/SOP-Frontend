@@ -22,3 +22,34 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# npm
+*.lock
+package-lock.jso
+package-lock.json
+
+# Logs and databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# Dependencias de desarrollo
+.env
+.env.local
+.env.test
+.env.production
+
+# Archivos de construcción
+/build/
+/dist/
+/out/
+/public/
+/build-output/
+
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
