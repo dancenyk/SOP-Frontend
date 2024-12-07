@@ -39,7 +39,7 @@ function Login() {
   return (
     <div>
       <h2>Bienvenida a SOPerWapas</h2>
-      <form onSubmit={handleLogin}>
+      <form className="form-register" onSubmit={handleLogin}>
         <input
           type="email"
           placeholder="Email"
@@ -49,12 +49,12 @@ function Login() {
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
-        <button type="submit">Login</button>
+        <button className="btn-submit" type="submit">Entrar</button>
       </form>
       {error && <p>{error}</p>}
     </div>
