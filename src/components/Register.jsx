@@ -60,10 +60,11 @@ function Register() {
   return (
     <div>
       <h2>Crear una cuenta nueva</h2>
-      <form onSubmit={handleRegister}>
+      <form className="form-register" onSubmit={handleRegister}>
         <input
           type="text"
-          placeholder="Name"
+          
+          placeholder="Nombre"
           value={name}
           onChange={(e) => setName(e.target.value)}
           required
@@ -77,19 +78,19 @@ function Register() {
         />
         <input
           type="password"
-          placeholder="Password"
+          placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
         />
          <input
           type="text"
-          placeholder="City"
+          placeholder="Ciudad"
           value={city}
           onChange={(e) => setCity(e.target.value)}
           required
         />
-        <button type="submit">Crear</button>
+        <button className="btn-submit" type="submit">Crear</button>
       </form>
       {error && <p>{error}</p>}
     </div>
