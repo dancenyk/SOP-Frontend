@@ -13,7 +13,7 @@ function PostCard({ content, authorName, timestamp }) {
           </span>
         </div>
         <div className="post-separator">
-          <img src="public/separator.png" alt="separador" />
+          <img src="/separator.png" alt="separador" />
         </div>
         <div className="post-content">{content}</div>
       </div>

@@ -5,7 +5,7 @@ const RegisterPage = () => {
     return (
         <div className="register-page">
           <div className="left-side">
-            <img src="spublic/form image.png" alt="intro" />
+            <img src="/formImage.png" alt="intro" />
           </div>
           <div className="right-side">
             <Register />

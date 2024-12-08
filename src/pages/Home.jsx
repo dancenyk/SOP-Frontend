@@ -21,7 +21,7 @@ const Home = () => {
           </Link>
         </div>
         <div className="home-image">
-          <img src="public/img home.png" alt="" />
+          <img src="/imgHome.png" alt="welcome" />
         </div>
       </section>
   );
