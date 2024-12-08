@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "../axiosConfig";
+import PostCard from "./PostCard";
 
 function Posts() {
   const [posts, setPosts] = useState(null);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -39,6 +41,12 @@ function Posts() {
 
   const handlePostSubmit = async (e) => {
     e.preventDefault();
+    if (!content.trim()) {
+      setError("No puedes subir un post vacío.");
+      return;
+    }
+
+    setError(""); 
     try {
       const response = await axios.post("/api/posts/new", { content });
       const newPost = response.data;
@@ -69,27 +77,25 @@ function Posts() {
           onChange={(e) => setContent(e.target.value)}
           placeholder="Escribe AQUÍ"
         />
+        {error && <p className="error-message">{error}</p>}
+        <div className="btn-post">
         <button type="submit">Publicar</button>
         <button type="button" onClick={() => setContent("")}>
           Cancelar
         </button>
+        </div>
+    
       </form>
       <div>
         {!posts
           ? "loading"
           : posts.map((post) => (
-              <div className="post-card" key={post._id}>
-                <p>{post.content}</p>
-                <p>
-                  <strong>Autor:</strong>
-                  {post.authorName || "Autor no disponible"}
-                </p>
-                <small>
-                  {isNaN(new Date(post.timestamp))
-                    ? "Fecha inválida"
-                    : new Date(post.timestamp).toLocaleString()}
-                </small>
-              </div>
+            <PostCard
+            key={post._id}
+            content={post.content}
+            authorName={post.authorName}
+            timestamp={post.timestamp}
+          />
             ))}
       </div>
     </div>
