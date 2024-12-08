@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import UserProvider from "./contexts/UserContext";
-import './App.css'
-import Register from './components/Register'
-import Login from "./components/Login";
+import "./App.css";
 import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Feed from "./pages/Feed";
@@ -12,12 +10,11 @@ import Users from "./pages/Users";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 
-
 function App() {
   return (
     <UserProvider>
       <Router>
-         <Navbar />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<RegisterPage />} />
