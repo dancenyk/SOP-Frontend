@@ -5,7 +5,7 @@ import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Feed from "./pages/Feed";
 import Home from "./pages/Home";
-import Navbar from "./components/NavBar";
+import Navbar from "./components/Navbar";
 import Users from "./pages/Users";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
