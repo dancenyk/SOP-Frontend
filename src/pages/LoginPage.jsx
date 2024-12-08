@@ -5,7 +5,7 @@ const LoginPage = () => {
     return (
         <div className="login-page">
           <div className="left-side">
-            <img src="src/assets/form image.png" alt="intro" />
+            <img src="public/form image.png" alt="intro" />
           </div>
           <div className="right-side">
             <Login />
